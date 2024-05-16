@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        function checkInput() {
+            var input = document.querySelector('input[name="name"]');
+            var value = input.value;
+
+            if (value === '') {
+                changeText('Please enter your name.');
+            } else if(value === 'nephenthe'|| value === 'my girl' || value === 'hanim') {
+                changeText(' قلب منی تو ');
+                changeBgImg('./images/bg-coupleKoala-1.jpeg');
+                chnageHeader('my cute girl ;)')
+            } else if(value === 'my girl') {
+                changeText('تویی که قلب منیی ');
+            } else if(value === 'soton') {
+                changeText('My bro  ');
+                chnageHeader('dadashaaaam ')
+                changeBgImg('./images/bg-shayan.jpg')
+            } else if(value === 'hadi') {
+                changeText('Your name is: ');
+            } else if(value === 'sajjad') {
+                changeText('Your name is: ');
+            }
+            else{
+                
+                changeText('please enterrrrr')
+                changeBgImg('./images/bg-koala-1.jpeg')
+
+            }
+        }
+
+        function changeText(newText) {
+            var textElement = document.getElementById("text");
+            textElement.textContent = newText;
+        }
+        function chnageHeader(newText){
+            let headerElement = document.getElementById("header");
+            headerElement.textContent = newText;
+        }
+        function changeBgImg(newImg){
+            let imgElement = document.getElementById("bg-img")
+            document.body.style.backgroundImage = `url('${newImg}')`;  
+        }
+    </script>
+    <title>whats your name</title>
+</head>
+<body>
+    <div class="quastion-box">
+    <h1 class="quastion" id="header">چی صدات میکنم ؟؟؟</h1>
+    </div>
+    <div class="conatiner">
+    <input type="text" name="name" placeholder="چی صدات میکنم؟؟" class="input_name" />
+    <button onclick="checkInput()" type="button" class="change-bt">نتیجه</button>
+  
+    </div>
+    
+    <p id="text">This is a sample text.</p>
+</body>
+</html>
